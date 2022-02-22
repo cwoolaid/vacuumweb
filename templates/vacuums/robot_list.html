@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Robot Vacuum List</h1>
+  {% if robot_list %}
+  <ul>
+    {% for model in robot_list %}
+      <li>
+        <a href="">{{ model.name }}</a> ({{model.brand}})
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no models in the library.</p>
+  {% endif %}
+{% endblock %}

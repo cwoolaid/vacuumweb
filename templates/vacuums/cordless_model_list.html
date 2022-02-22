@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Cordless Vacuum List</h1>
+  {% if cordless_model_list %}
+  <ul>
+    {% for model in cordless_model_list %}
+      <li>
+        <a href="{% url 'cordless-detail' model.pk %}">{{ model.name }}</a> ({{model.brand}})
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no models in the library.</p>
+  {% endif %}
+{% endblock %}

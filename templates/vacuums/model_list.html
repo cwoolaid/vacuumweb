@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Model List</h1>
+  {% if model_list %}
+  <ul>
+    {% for model in model_list %}
+      <li>
+        <a href="{{ model.get_absolute_url }}">{{ model.name }}</a> ({{model.brand}})
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no models in the library.</p>
+  {% endif %}
+{% endblock %}
