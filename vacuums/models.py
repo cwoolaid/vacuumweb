@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 from django.urls import reverse # Used to generate URLs by reversing the URL pattern
 
 # Create your models here.
@@ -39,7 +40,6 @@ class Model(models.Model):
     def get_absolute_url(self):
         """Returns the url to access a detail record for this model"""
         return reverse('model-detail', args=[str(self.id)])
-
 
 
 

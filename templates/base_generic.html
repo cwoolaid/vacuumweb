@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,9 +16,10 @@
       <div class="col-sm-2">
       {% block sidebar %}
         <ul class="sidebar-nav">
-          <li><a href="{% url 'index' %}">Home</a></li>
-          <li><a href="{% url 'cordless' %}">Cordless Vacuums</a></li>
-          <li><a href="{% url 'robot' %}">Robot Vacuums</a></li>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'vacuums' %}">All Vacuum List</a></li>
+            <li><a href="{% url 'cordless' %}">Cordless Vacuums</a></li>
+            <li><a href="{% url 'robot' %}">Robot Vacuums</a></li>
         </ul>
      {% endblock %}
       </div>

@@ -16,12 +16,16 @@ def index(request):
     return render(request, 'index.html', context)
 
 
+class AllModelList(ListView):
+    model = Model
+
+
 class CordlessModelList(ListView):
     # model = Model
     context_object_name = 'cordless_model_list'
     # context_object_name = 'cordless_list'
     queryset = Model.objects.filter(type__name='Cordless')
-    template_name = 'vacuums/cordless_model_list.html'
+    template_name = 'vacuums/model_list_cordless.html'
 
 
 class RobotModelList(ListView):
@@ -29,7 +33,7 @@ class RobotModelList(ListView):
     context_object_name = 'robot_model_list'
     # context_object_name = 'robot_list'
     queryset = Model.objects.filter(type__name='Robot')
-    template_name = 'vacuums/robot_model_list.html'
+    template_name = 'vacuums/model_list_robot.html'
 
 
 class CordlessDetailView(DetailView):
